@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid red; */
+}
+
+:root {
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+@media (max-width: 1400px) {
+    :root {
+        font-size: 18px;
+    }
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+header {
+    height: 100vh;
+    background-image: url("media/prague.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 900;
+    text-shadow: 4px 4px 18px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    line-height: 1.1;
+}
+
+@media (max-width: 1200px) {
+    header h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+#intro {
+    padding: 4rem;
+    background-color: #333;
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    #intro {
+        padding: 2rem;
+    }
+}
+
+#intro > div {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+#intro > div > h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+#intro > div > p {
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+}
+
+#articles {
+    background: #eee;
+    padding: 0 4rem;
+    overflow: auto;
+}
+
+#articles > article {
+    display: flex;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 4rem auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#articles > article.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#articles > article:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+#articles > article > div:first-child {
+    flex-shrink: 1;
+    flex-basis: 18rem;
+}
+
+#articles > article > div:last-child {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+#articles h1 {
+    margin-bottom: 1rem;
+    font-weight: 900;
+}
+
+@media (max-width: 840px) {
+    #articles > article {
+        display: block;
+    }
+
+    #articles > article > div:first-child {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    #articles {
+        padding: 0 2rem;
+    }
+}
+
+#quiz {
+    background: #eee;
+    padding: 8rem 4rem; /* Add padding to the top and bottom */
+}
+
+.quiz-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #333;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+#question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.question {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.answer {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    width: 100%;
+    background: #c5b8b8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    color: #333; /* Default color for answers */
+}
+
+.answer.correct {
+    background: #4CAF50;
+    color: #fff; /* Change to white when selected */
+    border-color: #4CAF50;
+}
+
+.answer.wrong {
+    background: #F44336;
+    color: #fff; /* Change to white when selected */
+    border-color: #F44336;
+}
+
+#next-button {
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    border: none;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+#next-button:hover {
+    background: #555;
+}
+
+@media (max-width: 600px) {
+    #quiz {
+        padding: 6rem 2rem; /* Add padding to the top and bottom */
+    }
+
+    .quiz-container {
+        padding: 1rem;
+    }
+}
+
+footer {
+    background-color: #333;
+    padding: 4rem;
+}
+
+footer h2 {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+
+footer ul {
+    list-style-type: none;
+    display: flex;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer img {
+    max-width: 50px;
+}
+
+@media (max-width: 600px) {
+    footer ul {
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
